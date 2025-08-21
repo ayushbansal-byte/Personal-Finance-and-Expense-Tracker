@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" href="logo.png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -100,40 +99,5 @@
     <footer>
         <p>© 2025 Personal Finance Tracker</p>
     </footer>
-
-    <script src="/app.js"></script>
-    <script>
-      const toggleBtn = document.getElementById('dark-mode-toggle');
-      const body = document.body;
-      const icon = toggleBtn.querySelector('i');
-
-      // Set the icon based on current mode
-      function setIcon() {
-        if (body.classList.contains('dark-mode')) {
-          icon.classList.remove('fa-moon');
-          icon.classList.add('fa-sun');
-        } else {
-          icon.classList.remove('fa-sun');
-          icon.classList.add('fa-moon');
-        }
-      }
-
-      // On page load, set mode and icon
-      if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-      }
-      setIcon();
-
-      toggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        setIcon();
-        // Save preference
-        if (body.classList.contains('dark-mode')) {
-          localStorage.setItem('darkMode', 'enabled');
-        } else {
-          localStorage.setItem('darkMode', 'disabled');
-        }
-      });
-    </script>
 </body>
 </html>
