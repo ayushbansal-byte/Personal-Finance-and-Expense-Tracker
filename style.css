@@ -105,6 +105,15 @@ header {
     align-items: center;
 }
 
+#finance-chart {
+    max-width: 260px;
+    max-height: 260px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
 /* Transaction Form */
 .transaction-form {
     background: white;

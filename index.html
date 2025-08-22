@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance & Expense Tracker</title>
+    <title>Personal Finance & Expense Tracker | Manage Your Money Easily</title>
+    <meta name="description" content="Track your income and expenses easily with this personal finance tracker. Visualize your spending, manage transactions, and stay on top of your budget.">
+    <meta name="keywords" content="finance tracker, expense tracker, personal finance, budget, income, expenses, money management">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="logo.png" alt="Finance Tracker Logo">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -99,5 +102,39 @@
     <footer>
         <p>© 2025 Personal Finance Tracker</p>
     </footer>
+    <script src="/app.js"></script>
+    <script>
+      // Dark mode toggle logic
+      const toggleBtn = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+      const icon = toggleBtn.querySelector('i');
+
+      function setIcon() {
+        if (body.classList.contains('dark-mode')) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        }
+      }
+
+      // On page load, set mode and icon
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+      }
+      setIcon();
+
+      toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        setIcon();
+        // Save preference
+        if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('darkMode', 'enabled');
+        } else {
+          localStorage.setItem('darkMode', 'disabled');
+        }
+      });
+    </script>
 </body>
 </html>
